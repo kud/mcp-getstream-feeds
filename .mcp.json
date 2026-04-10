@@ -1,11 +1,11 @@
 {
   "mcpServers": {
-    "getstream-feeds": {
-      "command": "node",
-      "args": ["./dist/index.js"],
+    "mcp-getstream-feeds": {
+      "command": "npx",
+      "args": ["-y", "@kud/mcp-getstream-feeds@latest"],
       "env": {
-        "MCP_GETSTREAM_API_KEY": "",
-        "MCP_GETSTREAM_SECRET": ""
+        "MCP_GETSTREAM_API_KEY": "${MCP_GETSTREAM_API_KEY}",
+        "MCP_GETSTREAM_SECRET": "${MCP_GETSTREAM_SECRET}"
       }
     }
   }
