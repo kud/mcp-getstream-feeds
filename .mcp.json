@@ -4,8 +4,8 @@
       "command": "node",
       "args": ["./dist/index.js"],
       "env": {
-        "GETSTREAM_API_KEY": "",
-        "GETSTREAM_API_SECRET": ""
+        "MCP_GETSTREAM_API_KEY": "",
+        "MCP_GETSTREAM_SECRET": ""
       }
     }
   }

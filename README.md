@@ -67,8 +67,8 @@ npm install && npm run build
       "command": "npx",
       "args": ["-y", "@kud/mcp-getstream-feeds"],
       "env": {
-        "GETSTREAM_API_KEY": "your_api_key",
-        "GETSTREAM_API_SECRET": "your_api_secret"
+        "MCP_GETSTREAM_API_KEY": "your_api_key",
+        "MCP_GETSTREAM_SECRET": "your_api_secret"
       }
     }
   }
@@ -92,8 +92,8 @@ npm install && npm run build
 
 ```bash
 claude mcp add getstream-feeds \
-  -e GETSTREAM_API_KEY=your_api_key \
-  -e GETSTREAM_API_SECRET=your_api_secret \
+  -e MCP_GETSTREAM_API_KEY=your_api_key \
+  -e MCP_GETSTREAM_SECRET=your_api_secret \
   -- npx -y @kud/mcp-getstream-feeds
 ```
 
@@ -111,8 +111,8 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
       "command": "npx",
       "args": ["-y", "@kud/mcp-getstream-feeds"],
       "env": {
-        "GETSTREAM_API_KEY": "your_api_key",
-        "GETSTREAM_API_SECRET": "your_api_secret"
+        "MCP_GETSTREAM_API_KEY": "your_api_key",
+        "MCP_GETSTREAM_SECRET": "your_api_secret"
       }
     }
   }
@@ -133,8 +133,8 @@ Add to `.cursor/mcp.json` in your project:
       "command": "npx",
       "args": ["-y", "@kud/mcp-getstream-feeds"],
       "env": {
-        "GETSTREAM_API_KEY": "your_api_key",
-        "GETSTREAM_API_SECRET": "your_api_secret"
+        "MCP_GETSTREAM_API_KEY": "your_api_key",
+        "MCP_GETSTREAM_SECRET": "your_api_secret"
       }
     }
   }
@@ -155,8 +155,8 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
       "command": "npx",
       "args": ["-y", "@kud/mcp-getstream-feeds"],
       "env": {
-        "GETSTREAM_API_KEY": "your_api_key",
-        "GETSTREAM_API_SECRET": "your_api_secret"
+        "MCP_GETSTREAM_API_KEY": "your_api_key",
+        "MCP_GETSTREAM_SECRET": "your_api_secret"
       }
     }
   }
@@ -177,8 +177,8 @@ Add to `.vscode/mcp.json` in your project:
       "command": "npx",
       "args": ["-y", "@kud/mcp-getstream-feeds"],
       "env": {
-        "GETSTREAM_API_KEY": "your_api_key",
-        "GETSTREAM_API_SECRET": "your_api_secret"
+        "MCP_GETSTREAM_API_KEY": "your_api_key",
+        "MCP_GETSTREAM_SECRET": "your_api_secret"
       }
     }
   }
@@ -270,16 +270,16 @@ npm run build:watch
 Terminal 2 — MCP Inspector:
 
 ```bash
-export GETSTREAM_API_KEY=your_api_key
-export GETSTREAM_API_SECRET=your_api_secret
+export MCP_GETSTREAM_API_KEY=your_api_key
+export MCP_GETSTREAM_SECRET=your_api_secret
 npm run inspect:dev
 ```
 
 ### Testing with MCP Inspector
 
 ```bash
-export GETSTREAM_API_KEY=your_api_key
-export GETSTREAM_API_SECRET=your_api_secret
+export MCP_GETSTREAM_API_KEY=your_api_key
+export MCP_GETSTREAM_SECRET=your_api_secret
 npm run inspect:dev
 ```
 
@@ -293,8 +293,8 @@ Open http://localhost:5173 to interactively test all tools.
 4. Set the env vars:
 
 ```bash
-export GETSTREAM_API_KEY=your_api_key
-export GETSTREAM_API_SECRET=your_api_secret
+export MCP_GETSTREAM_API_KEY=your_api_key
+export MCP_GETSTREAM_SECRET=your_api_secret
 ```
 
 Verify connectivity:
@@ -302,7 +302,7 @@ Verify connectivity:
 ```bash
 node -e "
 import('getstream').then(({ connect }) => {
-  const client = connect(process.env.GETSTREAM_API_KEY, process.env.GETSTREAM_API_SECRET);
+  const client = connect(process.env.MCP_GETSTREAM_API_KEY, process.env.MCP_GETSTREAM_SECRET);
   console.log('Connected:', client.baseURL);
 });
 "
@@ -312,7 +312,7 @@ import('getstream').then(({ connect }) => {
 
 ### Server Not Showing
 
-- Ensure `GETSTREAM_API_KEY` and `GETSTREAM_API_SECRET` are set in the MCP config's `env` block
+- Ensure `MCP_GETSTREAM_API_KEY` and `MCP_GETSTREAM_SECRET` are set in the MCP config's `env` block
 - Confirm `dist/index.js` exists — run `npm run build` if missing
 - Check the MCP config JSON is valid (no trailing commas)
 

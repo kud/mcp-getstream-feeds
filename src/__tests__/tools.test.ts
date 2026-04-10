@@ -31,8 +31,8 @@ const {
 })
 
 vi.hoisted(() => {
-  process.env.GETSTREAM_API_KEY = "test-api-key"
-  process.env.GETSTREAM_API_SECRET = "test-api-secret"
+  process.env.MCP_GETSTREAM_API_KEY = "test-api-key"
+  process.env.MCP_GETSTREAM_SECRET = "test-api-secret"
 })
 
 vi.mock("getstream", () => ({

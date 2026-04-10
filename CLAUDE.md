@@ -16,7 +16,7 @@ Feed IDs use `_` as delimiter. Special chars are encoded: `@` → `ATSYMBOL`, `.
 
 ## Auth
 
-Requires `GETSTREAM_API_KEY` and `GETSTREAM_API_SECRET` env vars. The SDK handles JWT signing server-side automatically.
+Requires `MCP_GETSTREAM_API_KEY` and `MCP_GETSTREAM_SECRET` env vars. The SDK handles JWT signing server-side automatically.
 
 ## Development
 

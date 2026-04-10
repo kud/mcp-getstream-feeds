@@ -4,12 +4,12 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod"
 
-const API_KEY = process.env.GETSTREAM_API_KEY
-const API_SECRET = process.env.GETSTREAM_API_SECRET
+const API_KEY = process.env.MCP_GETSTREAM_API_KEY
+const API_SECRET = process.env.MCP_GETSTREAM_SECRET
 
 if (!API_KEY || !API_SECRET) {
   console.error(
-    "GETSTREAM_API_KEY and GETSTREAM_API_SECRET env vars are required",
+    "MCP_GETSTREAM_API_KEY and MCP_GETSTREAM_SECRET env vars are required",
   )
   process.exit(1)
 }
