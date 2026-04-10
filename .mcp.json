@@ -1,10 +1,6 @@
 {
   "mcp-getstream-feeds": {
-    "command": "node",
-    "args": ["./dist/index.js"],
-    "env": {
-      "MCP_GETSTREAM_API_KEY": "${MCP_GETSTREAM_API_KEY}",
-      "MCP_GETSTREAM_SECRET": "${MCP_GETSTREAM_SECRET}"
-    }
+    "command": "npx",
+    "args": ["tsx", "src/index.ts"]
   }
 }
