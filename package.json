@@ -58,9 +58,12 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "4.1.9",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0",
-    "vitest": "^1.6.0"
+    "vitest": "4.1.9"
+  },
+  "overrides": {
+    "esbuild": "0.28.1"
   }
 }
