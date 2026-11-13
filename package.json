@@ -44,7 +44,7 @@
   "bugs": {
     "url": "https://github.com/kud/mcp-getstream-feeds/issues"
   },
-  "homepage": "https://github.com/kud/mcp-getstream-feeds#readme",
+  "homepage": "https://kud.io/projects/mcp-getstream-feeds",
   "engines": {
     "node": ">=20.0.0"
   },
