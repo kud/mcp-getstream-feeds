@@ -151,14 +151,14 @@ server.registerTool(
   {
     description:
       "Get what feeds a specific feed follows (i.e. what a feed is subscribed to). Example: feed_slug=notification, feed_id=user_123",
-    inputSchema: {
+    inputSchema: z.strictObject({
       feed_slug: z.string().describe('Feed slug (e.g. "notification")'),
       feed_id: z.string().describe('Feed ID (e.g. "user_123")'),
       limit: z
         .number()
         .default(100)
         .describe("Max number of results to return"),
-    },
+    }),
   },
   getFeedFollowing,
 )
@@ -168,7 +168,7 @@ server.registerTool(
   {
     description:
       "Get followers of a specific feed (i.e. who is subscribed to a feed). Example: feed_slug=timeline, feed_id=timeline_global",
-    inputSchema: {
+    inputSchema: z.strictObject({
       feed_slug: z.string().describe('Feed slug (e.g. "timeline")'),
       feed_id: z.string().describe('Feed ID (e.g. "timeline_global")'),
       limit: z
@@ -176,7 +176,7 @@ server.registerTool(
         .default(100)
         .describe("Max number of results to return"),
       offset: z.number().default(0).describe("Pagination offset (max 999)"),
-    },
+    }),
   },
   getFeedFollowers,
 )
@@ -185,14 +185,14 @@ server.registerTool(
   "getstream_feed_activities",
   {
     description: "Get recent activities on a feed with timestamps and payloads",
-    inputSchema: {
+    inputSchema: z.strictObject({
       feed_slug: z.string().describe("Feed slug"),
       feed_id: z.string().describe("Feed ID"),
       limit: z
         .number()
         .default(10)
         .describe("Max number of activities to return"),
-    },
+    }),
   },
   getFeedActivities,
 )
@@ -202,7 +202,7 @@ server.registerTool(
   {
     description:
       "Subscribe a feed to another feed (create a follow relationship). Requires confirm: true as a safety gate.",
-    inputSchema: {
+    inputSchema: z.strictObject({
       source_feed_slug: z
         .string()
         .describe("Slug of the feed that will follow"),
@@ -213,7 +213,7 @@ server.registerTool(
         .boolean()
         .default(false)
         .describe("Must be true to execute the follow"),
-    },
+    }),
   },
   followFeed,
 )
@@ -223,7 +223,7 @@ server.registerTool(
   {
     description:
       "Unsubscribe a feed from another feed (remove a follow relationship). Requires confirm: true as a safety gate.",
-    inputSchema: {
+    inputSchema: z.strictObject({
       source_feed_slug: z
         .string()
         .describe("Slug of the feed that will unfollow"),
@@ -236,7 +236,7 @@ server.registerTool(
         .boolean()
         .default(false)
         .describe("Must be true to execute the unfollow"),
-    },
+    }),
   },
   unfollowFeed,
 )
